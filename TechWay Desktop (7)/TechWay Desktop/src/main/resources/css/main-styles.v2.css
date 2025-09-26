@@ -1,0 +1,369 @@
+/* =========================================================
+   TechWay Desktop – App Shell & Navigation (White Header)
+   هذا الملف يركز على الهيدر/الناف/الهيرو + نفس الرموز
+   متوافق مع main-styles.css (نفس القيم، لا تعارض)
+   ========================================================= */
+
+/* ---------- Tokens (نفسها) ---------- */
+.root {
+  -fx-primary-50:  #F5F3FF;
+  -fx-primary-100: #EDE9FE;
+  -fx-primary-200: #DDD6FE;
+  -fx-primary-300: #C4B5FD;
+  -fx-primary-400: #A78BFA;
+  -fx-primary-500: #8B5FE8;
+  -fx-primary-600: #7C3AED;
+  -fx-primary-700: #6D28D9;
+  -fx-primary-800: #5B21B6;
+  -fx-primary-900: #4C1D95;
+
+  -fx-secondary-500: #4F46E5;
+  -fx-accent-500:    #EC4899;
+
+  -fx-slate-50:  #F8FAFC;
+  -fx-slate-100: #F1F5F9;
+  -fx-slate-200: #E2E8F0;
+  -fx-slate-300: #CBD5E1;
+  -fx-slate-400: #94A3B8;
+  -fx-slate-500: #64748B;
+  -fx-slate-600: #475569;
+  -fx-slate-700: #334155;
+  -fx-slate-800: #1E293B;
+  -fx-slate-900: #0F172A;
+
+  -fx-surface:       #FFFFFF;
+  -fx-surface-muted: #F8FAFC;
+
+  -fx-text-primary:    #0F172A;
+  -fx-text-secondary:  #475569;
+  -fx-text-muted:      #94A3B8;
+  -fx-text-on-primary: #FFFFFF;
+
+  -fx-radius-sm: 8;
+  -fx-radius-md: 14;
+  -fx-radius-lg: 20;
+
+  -fx-shadow-sm: dropshadow(gaussian, rgba(15,23,42,0.08),  8, 0.2, 0, 2);
+  -fx-shadow-md: dropshadow(gaussian, rgba(15,23,42,0.12), 16, 0.2, 0, 6);
+  -fx-shadow-lg: dropshadow(gaussian, rgba(15,23,42,0.18), 28, 0.25, 0, 12);
+
+  -fx-font-family: "Rubik-MediumItalic", Tahoma, Geneva, Verdana, sans-serif;
+  -fx-font-size-xs: 12px;
+  -fx-font-size-sm: 14px;
+  -fx-font-size-md: 16px;
+  -fx-font-size-lg: 18px;
+  -fx-font-size-xl: 22px;
+  -fx-font-size-2xl: 26px;
+  -fx-font-size-3xl: 32px;
+  -fx-font-size-4xl: 40px;
+}
+
+/* ---------- App Shell ---------- */
+.main-container { -fx-background-color: -fx-surface; }
+
+/* Header: أبيض + روابط كبسولات */
+.header-section {
+  -fx-background-color: #FFFFFF;
+  -fx-padding: 8 24;
+  -fx-border-color: #E6E8EC;
+  -fx-border-width: 0;
+  -fx-min-height: 56px;
+  -fx-pref-height: 56px;
+  -fx-max-height: 56px;
+}
+.brand, .app-title, .header-title {
+  -fx-text-fill: #1F2937;
+  -fx-font-size: 18px;
+  -fx-font-weight: 800;
+}
+.nav-link, .nav-button, #homeButton, #coursesButton, #aboutButton, #contactButton, #profileButton, #logoutButton {
+  -fx-background-color: transparent;
+  -fx-text-fill: #374151;
+  -fx-font-weight: 600;
+  -fx-padding: 6 12;
+  -fx-background-radius: 10px;
+  -fx-border-radius: 10px;
+  -fx-cursor: hand;
+}
+.nav-link:hover, .nav-button:hover,
+#homeButton:hover, #coursesButton:hover, #aboutButton:hover, #contactButton:hover, #profileButton:hover, #logoutButton:hover {
+  -fx-background-color: rgba(79,70,229,0.06);
+  -fx-text-fill: #4F46E5;
+}
+.nav-link.active, .nav-button.active {
+  -fx-background-color: rgba(79,70,229,0.10);
+  -fx-text-fill: #4F46E5;
+  -fx-border-color: rgba(79,70,229,0.35);
+  -fx-border-width: 1;
+}
+.primary-button, .button.primary, #loginButton {
+  -fx-background-color: linear-gradient(to bottom, #6D28D9, #5B21B6);
+  -fx-text-fill: #FFFFFF;
+  -fx-font-weight: 700;
+  -fx-padding: 8 14;
+  -fx-background-radius: 10px;
+  -fx-cursor: hand;
+}
+
+/* ---------- Hero (صورة + طبقة بنفسجية) ---------- */
+/* لا تفرض أي ارتفاع؛ الـMainController يربط 50% من ارتفاع النافذة */
+.hero-section { -fx-background-radius: 20; -fx-effect: -fx-shadow-lg; -fx-padding: 24; }
+#heroSection { -fx-background-color: transparent; }
+#heroImage   { -fx-opacity: 1; }
+#heroOverlay { -fx-fill: linear-gradient(to bottom right, rgba(124,58,237,0.65) 0%, rgba(139,95,232,0.65) 100%); }
+.hero-title  { -fx-text-fill: #FFFFFF; -fx-font-size: -fx-font-size-4xl; -fx-font-weight: 800; -fx-text-alignment: center; }
+.hero-subtitle { -fx-text-fill: rgba(255,255,255,0.92); -fx-font-size: -fx-font-size-lg; -fx-text-alignment: center; }
+#heroSection .hero-title    { -fx-text-fill: white; -fx-font-weight: 800; -fx-font-size: 44px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 24, 0, 0, 8); }
+#heroSection .hero-subtitle { -fx-text-fill: rgba(255,255,255,0.90); -fx-font-size: 16px; }
+#heroExploreButton, .hero-cta-primary {
+  -fx-background-color: linear-gradient(to right, #7C3AED, #8B5FE8);
+  -fx-text-fill: white;
+  -fx-font-weight: 700;
+  -fx-font-size: 14px;
+  -fx-padding: 12 26;
+  -fx-background-radius: 14;
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.20), 18, 0, 0, 6);
+}
+#heroExploreButton:hover, .hero-cta-primary:hover { -fx-translate-y: -1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 22, 0, 0, 8); }
+#heroAboutButton, .hero-cta-secondary {
+  -fx-background-color: transparent;
+  -fx-text-fill: white;
+  -fx-border-color: rgba(255,255,255,0.90);
+  -fx-border-width: 2;
+  -fx-border-radius: 14;
+  -fx-background-radius: 14;
+  -fx-padding: 10 24;
+  -fx-font-weight: 700;
+  -fx-font-size: 14px;
+  -fx-cursor: hand;
+}
+#heroAboutButton:hover, .hero-cta-secondary:hover { -fx-background-color: rgba(255,255,255,0.12); }
+
+/* ---------- Stats / Cards (مختصرات لازمة للهوم) ---------- */
+.stats-card {
+  -fx-background-color: -fx-surface;
+  -fx-background-radius: -fx-radius-md;
+  -fx-padding: 20;
+  -fx-effect: -fx-shadow-sm;
+  -fx-alignment: center;
+  -fx-min-width: 140;
+}
+.stats-number { -fx-text-fill: -fx-primary-600; -fx-font-size: -fx-font-size-2xl; -fx-font-weight: 800; }
+.stats-label  { -fx-text-fill: -fx-text-secondary; -fx-font-size: -fx-font-size-sm; }
+
+/* ---------- ScrollPane ---------- */
+.scroll-pane > .viewport { -fx-background-color: transparent; }
+.scroll-pane { -fx-background-color: transparent; }
+
+/* ---------- Footer (الهيدر/الهوامش) ---------- */
+.footer-section { -fx-background-color: #F1F5F9; -fx-padding: 8 16; }
+.footer-section .label { -fx-text-fill: #475569; -fx-font-size: 12px; }
+
+/* ---------- Profile bits reused ---------- */
+.profile-page { -fx-background-color: #F8FAFC; }
+.primary-button {
+  -fx-background-color: linear-gradient(135deg, #8B5FE8, #9C7EF0);
+  -fx-text-fill: white;
+  -fx-font-size: 14px;
+  -fx-font-weight: 700;
+  -fx-background-radius: 24;
+  -fx-padding: 10 16;
+}
+.primary-button:hover { -fx-background-color: linear-gradient(135deg, #7C3AED, #8B5FE8); }
+/* ====== Hero parity with website ====== */
+#heroSection .hero-title {
+    -fx-fill: white;             /* لمكوّن Text داخل TextFlow */
+    -fx-text-fill: white;        /* احتياط لو Label */
+    -fx-font-weight: 900;
+    -fx-font-size: 56px;         /* حجم كبير مثل الموقع */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 24, 0, 0, 8);
+    -fx-line-spacing: 4px;
+}
+#heroSection .hero-accent {
+    -fx-fill: #FDE047;           /* أصفر (amber-400) */
+    -fx-text-fill: #FDE047;
+}
+
+#heroSection .hero-subtitle {
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-size: 18px;
+}
+
+/* CTA buttons in hero (بحسب الموقع) */
+.hero-cta-primary {
+    -fx-background-color: linear-gradient(to right, #7C3AED, #8B5FE8);
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 14px;
+    -fx-padding: 12 26;
+    -fx-background-radius: 14;
+    -fx-cursor: hand;
+}
+.hero-cta-primary:hover { -fx-opacity: .95; }
+
+.hero-cta-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-border-color: rgba(255,255,255,0.90);
+    -fx-border-width: 2;
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+    -fx-padding: 10 24;
+    -fx-font-weight: 700;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+.hero-cta-secondary:hover { -fx-background-color: rgba(255,255,255,0.12); }
+
+/* Stats row under buttons */
+.hero-stats { -fx-padding: 16 0 0 0; }
+.hero-stat-number {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 22px;
+    -fx-font-weight: 800;
+}
+.hero-stat-caption {
+    -fx-text-fill: rgba(255,255,255,0.90);
+    -fx-font-size: 13px;
+}
+
+/* ====== Why section parity ====== */
+.why-title {
+    -fx-text-fill: #0F172A;
+    -fx-font-size: 28px;
+    -fx-font-weight: 900;
+}
+.why-subtitle {
+    -fx-text-fill: #64748B;
+    -fx-font-size: 14px;
+}
+
+/* modern white feature cards */
+.feature-card-modern {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-color: #E5EAF0;
+    -fx-border-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 12, 0, 0, 2);
+    -fx-padding: 20;
+}
+.feature-card-modern:hover {
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.10), 18, 0, 0, 6);
+    -fx-translate-y: -1;
+}
+.feature-icon-modern {
+    -fx-background-color: #EEF2FF; /* لو تبين “قرص” خلف الأيقونة: */
+    -fx-background-radius: 12;
+    -fx-padding: 10 12;
+    -fx-font-size: 20px;
+    -fx-text-fill: #4338CA;
+}
+.feature-title-modern {
+    -fx-text-fill: #0F172A;
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+}
+.feature-desc-modern {
+    -fx-text-fill: #64748B;
+    -fx-font-size: 13px;
+}
+/* ===== Favorites (Wishlist) ===== */
+.fav-toggle {
+  -fx-background-color: rgba(255,255,255,0.92);
+  -fx-background-radius: 999;
+  -fx-border-color: rgba(0,0,0,0.06);
+  -fx-border-radius: 999;
+  -fx-padding: 6 10;
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.10), 8, 0, 0, 2);
+  -fx-text-fill: #6B7280; /* slate-500 */
+  -fx-font-weight: 800;
+  -fx-font-size: 13px;
+}
+.fav-toggle:hover { -fx-background-color: rgba(255,255,255,0.98); }
+
+.fav-toggle:selected {
+  -fx-text-fill: #EF4444; /* red-500 */
+  -fx-border-color: rgba(239,68,68,0.35);
+  -fx-effect: dropshadow(gaussian, rgba(239,68,68,0.22), 10, 0, 0, 4);
+}
+
+/* زر قلب صغير يطفو أعلى البطاقة */
+.card-fav-anchor {
+  -fx-alignment: top-right;
+  -fx-padding: 8;
+}
+
+.lesson-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.lesson-card {
+    -fx-background-radius: 12;
+}
+
+
+/* خلفية المربعات الرمادية */
+.section-card {
+    -fx-background-color: #f7f8fa; /* رمادي فاتح جدا */
+    -fx-padding: 20px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: transparent; /* بدون حدود ظاهرة */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 3, 0, 0, 1);
+    -fx-spacing: 12px;
+}
+
+/* عناوين الأقسام */
+.section-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1a1a1a;
+    -fx-font-family: "Rubik-MediumItalic";
+}
+
+/* TitledPane العنوان */
+.sylla-titled-pane > .title {
+    -fx-background-color: #eceff1; /* رمادي فاتح جدا */
+    -fx-background-radius: 6px;
+    -fx-padding: 10px 16px;
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #444444;
+    -fx-border-radius: 6px;
+    -fx-border-color: transparent;
+    -fx-effect: none;
+}
+
+/* TitledPane المفتوح */
+.sylla-titled-pane:selected > .title {
+    -fx-background-color: #d4d9de; /* لون رمادي أغمق قليلًا عند الفتح */
+}
+
+/* محتوى الوحدة */
+.sylla-content {
+    -fx-background-color: transparent;
+    -fx-padding: 12px 20px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #555555;
+}
+
+.secondary-button {
+  -fx-background-color: linear-gradient(to bottom, #6D28D9, #5B21B6);
+  -fx-text-fill: #FFFFFF;
+  -fx-font-weight: 700;
+  -fx-padding: 8 14;
+  -fx-background-radius: 10px;
+  -fx-cursor: hand;
+}
+.status-error{
+  color: #e53935;   /* أحمر فاقع */
+  font-weight: bold;
+}
+
+.error-message{
+  color: #e53935;   /* أحمر فاقع */
+  font-weight: bold;
+}

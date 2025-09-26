@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خريطة الكورسات</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        html, body { height: 100%; margin: 0; padding: 0; }
+        #map { height: 100vh; width: 100%; }
+        .course-popup { text-align: right; max-width: 280px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; direction: rtl; }
+        .course-title { font-weight: bold; color: #2c3e50; margin-bottom: 8px; font-size: 14px; }
+        .course-info { color: #7f8c8d; font-size: 12px; margin-bottom: 4px; }
+        .course-price { color: #e74c3c; font-weight: bold; font-size: 13px; }
+        .course-free { color: #27ae60; font-weight: bold; font-size: 13px; }
+        .location-type { padding: 2px 6px; border-radius: 12px; font-size: 10px; margin-top: 4px; display: inline-block; color: white; font-weight: bold; }
+        .course-btn { background: #3498db; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; margin-top: 8px; font-size: 11px; }
+        .course-btn:hover { background: #2980b9; }
+
+        #locateBtn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #8B5CF6;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #locateBtn:hover { background-color: #7C3AED; }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<button id="locateBtn">📍 الموقع الحالي</button>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    let map = L.map('map').setView([24.7136, 46.6753], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    let markers = [];
+
+    function addCourseMarker(course) {
+        if(!course.latitude || !course.longitude) return;
+
+        let typeIcon = '🏢';
+        let typeColor = '#8e44ad';
+        let locationTypeDisplay = 'حضوري';
+
+        let address = course.fullAddress || course.location || 'غير محدد';
+
+        let popupContent = `<div class="course-popup">
+            <div class="course-title">${course.title}</div>
+            <div class="course-info">المدرب: ${course.instructor || 'غير محدد'}</div>
+            <div class="course-info">العنوان: ${address}</div>
+            <div class="location-type" style="background-color:${typeColor}">${typeIcon} ${locationTypeDisplay}</div>
+            <div class="${course.free ? 'course-free' : 'course-price'}">${course.free ? 'مجاني' : course.price + ' ريال'}</div>
+        </div>`;
+
+        let purpleIcon = L.icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-violet.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        let marker = L.marker([course.latitude, course.longitude], { icon: purpleIcon }).addTo(map);
+        marker.bindPopup(popupContent);
+        markers.push(marker);
+    }
+
+    function clearMarkers() {
+        markers.forEach(m => map.removeLayer(m));
+        markers = [];
+    }
+
+    // Fetch courses from API
+    fetch('http://localhost:8080/api/courses')
+        .then(res => res.json())
+        .then(data => {
+            clearMarkers();
+            data.data.forEach(course => addCourseMarker(course));
+            if(data.data.length > 0 && data.data[0].latitude && data.data[0].longitude){
+                map.setView([data.data[0].latitude, data.data[0].longitude], 12);
+                markers[0].openPopup();
+            }
+        })
+        .catch(err => console.error('Failed to load courses:', err));
+
+    // زر الموقع الحالي
+    const locateBtn = document.getElementById('locateBtn');
+    locateBtn.addEventListener('click', () => {
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(pos => {
+                const lat = pos.coords.latitude;
+                const lng = pos.coords.longitude;
+
+                // Marker للموقع الحالي
+                const userMarker = L.marker([lat, lng]).addTo(map).bindPopup("أنت هنا").openPopup();
+                map.setView([lat, lng], 12);
+
+                // إرسال الإحداثيات لـ JavaFX (إذا موجود الجسر)
+                if(window.javaConnector && window.javaConnector.onLocationFound) {
+                    window.javaConnector.onLocationFound(lat, lng);
+                }
+            }, err => alert("تعذّر تحديد الموقع: " + err.message));
+        } else {
+            alert("المتصفح لا يدعم تحديد الموقع.");
+        }
+    });
+</script>
+</body>
+</html>

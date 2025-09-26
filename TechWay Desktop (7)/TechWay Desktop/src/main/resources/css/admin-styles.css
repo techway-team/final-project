@@ -1,0 +1,139 @@
+/* صفحة الأدمن */
+.admin-page {
+  -fx-background-color: #F6F7FB;
+}
+
+/* الهيدر */
+.admin-header {
+  -fx-padding: 18 18 8 18;
+}
+.headline {
+  -fx-font-size: 26px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #111827;
+}
+.subhead {
+  -fx-font-size: 14px;
+  -fx-text-fill: #6B7280;
+}
+
+/* تبويبات */
+.admin-tabs {
+  -fx-padding: 0 18 18 18;
+  -fx-background-color: transparent;
+}
+.admin-tabs > .tab-header-area {
+  -fx-padding: 12 0 8 0;
+  -fx-background-color: transparent;
+}
+.admin-tabs .tab-header-area .headers-region .tab {
+  -fx-background-color: transparent;
+  -fx-padding: 6 16 10 16;
+}
+.admin-tabs .tab-header-area .headers-region .tab:selected {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent transparent #7C3AED transparent;
+  -fx-border-width: 0 0 3 0;
+}
+.admin-tabs .tab-header-area .tab-label {
+  -fx-text-fill: #374151;
+  -fx-font-size: 14px;
+}
+.admin-tabs .tab-header-area .tab:selected .tab-label {
+  -fx-text-fill: #111827;
+  -fx-font-weight: bold;
+}
+
+/* أقسام المحتوى */
+.tab-content {
+  -fx-padding: 0 18 18 18;
+}
+.section-title {
+  -fx-font-size: 18px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #111827;
+}
+
+/* بطاقات */
+.card {
+  -fx-background-color: white;
+  -fx-padding: 12;
+  -fx-background-radius: 14;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 12, 0.1, 0, 4);
+}
+
+/* جدول أنيق */
+.table-view {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
+}
+.table-view > .column-header-background {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent transparent #E5E7EB transparent;
+}
+.table-view .column-header .label {
+  -fx-text-fill: #6B7280;
+  -fx-font-size: 12.5px;
+  -fx-font-weight: 700;
+}
+.table-row-cell {
+  -fx-background-color: transparent;
+  -fx-cell-size: 44px;
+}
+.table-row-cell:odd {
+  -fx-background-color: #FAFAFB;
+}
+.table-row-cell:selected {
+  -fx-background-color: #EEF2FF;
+}
+.table-view .placeholder .label.muted {
+  -fx-text-fill: #9CA3AF;
+}
+
+/* أزرار */
+.primary-button {
+  -fx-background-color: #7C3AED;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-radius: 10;
+  -fx-padding: 8 14 8 14;
+}
+.primary-button:hover { -fx-background-color: #6D28D9; }
+
+.secondary-button {
+  -fx-background-color: #E5E7EB;
+  -fx-text-fill: #111827;
+  -fx-background-radius: 10;
+  -fx-padding: 8 14 8 14;
+}
+.secondary-button:hover { -fx-background-color: #D1D5DB; }
+
+.ghost-button {
+  -fx-background-color: transparent;
+  -fx-border-color: #D1D5DB;
+  -fx-border-radius: 10;
+  -fx-text-fill: #111827;
+  -fx-padding: 8 14 8 14;
+}
+.ghost-button:hover { -fx-border-color: #9CA3AF; }
+
+.warning-button {
+  -fx-background-color: #F59E0B;
+  -fx-text-fill: #111827;
+  -fx-background-radius: 10;
+  -fx-padding: 8 14 8 14;
+}
+.warning-button:hover { -fx-background-color: #D97706; }
+
+.danger-button {
+  -fx-background-color: #EF4444;
+  -fx-text-fill: white;
+  -fx-background-radius: 10;
+  -fx-padding: 8 14 8 14;
+}
+.danger-button:hover { -fx-background-color: #DC2626; }
+
+.search-field {
+  -fx-background-radius: 10;
+  -fx-padding: 8 12 8 12;
+}

@@ -1,0 +1,261 @@
+/* Enhanced Contact Page Styles */
+/* بطاقات الاتصال */
+.contact-card {
+    -fx-background-color: #F3E8FF; /* لون موف فاتح */
+    -fx-background-radius: 18;
+    -fx-padding: 24;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.04), 6, 0, 0, 2);
+}
+/* Hero Section */
+.contact-hero-title {
+    -fx-font-family: "Tajawal Medium";
+
+    -fx-font-size: 42px;
+    -fx-font-weight: 800;
+    -fx-text-fill: linear-gradient(135deg, #1F2937, #374151);
+    -fx-letter-spacing: -0.5px;
+}
+
+.contact-hero-subtitle {
+    -fx-font-family: "Tajawal Medium";
+    -fx-font-size: 16px;
+    -fx-text-fill: #6B7280;
+    -fx-line-spacing: 4px;
+}
+
+/* Section Titles */
+/* عنوان القسم */
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+
+
+.contact-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0.3, 0, 4);
+    -fx-border-color: #B39DDB;
+}
+
+
+/* Form Elements */
+/* تسميات الحقول */
+.form-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7280;
+}
+
+
+/* تنسيق مدخلات النموذج */
+.input, .textarea, .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #D1C4E9;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 8 12;
+    -fx-font-size: 13px;
+    -fx-text-fill: #111827;
+}
+
+.textarea {
+    -fx-pref-height: 100px;
+}
+
+.input:focused, .textarea:focused {
+    -fx-background-color: white;
+    -fx-border-color: #7C3AED;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.25), 12, 0.3, 0, 0);
+}
+
+.input:hover, .textarea:hover {
+    -fx-border-color: #9CA3AF;
+}
+
+/* ComboBox Styling */
+.combo-box {
+    -fx-background-color: #F9FAFB;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 12 16;
+    -fx-font-size: 14px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #7C3AED;
+    -fx-border-width: 2;
+}
+
+/* Buttons */
+/* الأزرار */
+.primary-button {
+    -fx-background-color: #7C3AED;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+}
+
+
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(135deg, #6D28D9, #7C3AED, #9333EA);
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.4), 12, 0.3, 0, 4);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.primary-button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Secondary Button */
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #7C3AED;
+    -fx-text-fill: #7C3AED;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 8 16;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #E5E7EB;
+    -fx-border-color: #9CA3AF;
+}
+
+.secondary-button:pressed {
+    -fx-background-color: #D1D5DB;
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+}
+
+/* Info Section */
+.info-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111827;
+}
+
+.info-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4B5563;
+}
+
+.icon-badge {
+    -fx-background-color: #F3F4F6;
+    -fx-background-radius: 50%;
+    -fx-min-width: 36px;
+    -fx-min-height: 36px;
+    -fx-pref-width: 36px;
+    -fx-pref-height: 36px;
+    -fx-alignment: center;
+    -fx-padding: 0;
+    -fx-font-size: 16px;
+    -fx-text-fill: #7C3AED;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.2), 6, 0.2, 0, 1);
+}
+
+
+/* FAQ Section */
+
+ .faq-pane {
+     -fx-background-color: #EDE7F6;  /* موف فاتح Material */
+     -fx-border-color: #D1C4E9;      /* إطار بنفس التدرج */
+     -fx-border-radius: 24;           /* حواف ناعمة جداً */
+     -fx-background-radius: 24;
+     -fx-padding: 16;
+     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0.2, 0, 2);
+     -fx-cursor: hand;
+     -fx-transition: all 0.3s ease;
+ }
+
+ /* Hover effect */
+ .faq-pane:hover {
+     -fx-background-color: #D1C4E9;  /* تدرج أغمق عند المرور */
+     -fx-border-color: #B39DDB;
+     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0.3, 0, 4);
+ }
+
+ /* Question Title */
+ .titled-pane > .title {
+     -fx-background-color: #F3E8FF;  /* موف فاتح */
+     -fx-text-fill: #6B4E2F;         /* بني فاتح */
+     -fx-font-weight: bold;
+     -fx-font-size: 14px;
+     -fx-padding: 14;
+     -fx-background-radius: 12;
+ }
+
+.titled-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: #D8B4FE;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+
+ /* Answer Content */
+ .faq-pane > .content {
+     -fx-font-size: 14px;
+     -fx-text-fill: #212121; /* أسود رسمي Material */
+     -fx-padding: 8 0 0 0;
+     -fx-line-spacing: 4px;
+ }
+
+ /* Optional: collapsed/expanded transitions */
+ .faq-pane.collapsed > .content {
+     -fx-max-height: 0;
+     -fx-opacity: 0;
+     -fx-padding: 0;
+     -fx-transition: all 0.3s ease;
+ }
+
+ .faq-pane.expanded > .content {
+     -fx-max-height: 200;
+     -fx-opacity: 1;
+     -fx-padding: 8 0 0 0;
+     -fx-transition: all 0.3s ease;
+ }
+
+
+
+
+/* Stats Section */
+.stats-item {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 16;
+    -fx-alignment: center;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(17,24,39,0.06), 8, 0.15, 0, 2);
+}
+
+.stats-item:hover {
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.2), 12, 0.25, 0, 4);
+    -fx-border-color: rgba(124,58,237,0.25);
+}
+
+.stats-number {
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #7C3AED;
+}
+
+.stats-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6B7280;
+}
+
+/* General Root */
+.root {
+    -fx-font-family: "Tajawal Medium";
+    -fx-font-size: 14px;
+}
+
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.techway.coursemanagementdesktop.controller.QuizPageController">
+
+    <top>
+        <Label fx:id="quizTitle" style="-fx-font-size: 20px; -fx-font-weight: bold;"
+               text="عنوان الكويز" BorderPane.alignment="CENTER" />
+    </top>
+
+    <center>
+        <VBox fx:id="questionsContainer" spacing="20.0">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20" />
+            </padding>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+            <Label fx:id="statusLabel" text="حالة الكويز تظهر هنا" />
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button fx:id="startQuizButton" text="بدء الكويز" onAction="#onStartQuiz"
+                        style="-fx-background-color: linear-gradient(to right, #00b894, #00cec9);
+               -fx-text-fill: white;
+               -fx-font-size: 15px;
+               -fx-font-weight: bold;
+               -fx-background-radius: 8;
+               -fx-padding: 8 20;
+               -fx-cursor: hand;
+               -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.3, 0, 2);" />
+                <Button fx:id="submitButton" text=" إنهاء الكويز وعرض الشهادة" onAction="#onSubmit" />
+                <Button fx:id="btnViewCertificate" text="عرض الشهادة" onAction="#onViewCertificate"                    style="-fx-background-color: linear-gradient(to right, #00b894, #00cec9);
+               -fx-text-fill: white;
+               -fx-font-size: 15px;
+               -fx-font-weight: bold;
+               -fx-background-radius: 8;
+               -fx-padding: 8 20;
+               -fx-cursor: hand;
+               -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.3, 0, 2);"/>
+
+
+            </HBox>
+
+        </VBox>
+    </bottom>
+
+
+
+</BorderPane>

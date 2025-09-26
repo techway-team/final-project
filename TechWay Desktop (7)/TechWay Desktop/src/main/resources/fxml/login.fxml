@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" styleClass="form-container" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.techway.coursemanagementdesktop.controller.LoginController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+
+    <!-- Header -->
+    <VBox alignment="CENTER" spacing="10.0">
+        <Label styleClass="form-title" text="تسجيل الدخول" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label style="-fx-text-fill: #64748B;" text="مرحباً بعودتك! سجل الدخول للمتابعة" textAlignment="CENTER" />
+    </VBox>
+
+    <!-- Form Fields -->
+    <VBox spacing="15.0">
+        <VBox spacing="5.0">
+            <Label style="-fx-font-weight: bold;" text="البريد الإلكتروني" />
+            <TextField fx:id="emailField" promptText="أدخل بريدك الإلكتروني" styleClass="text-field">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </TextField>
+        </VBox>
+
+        <VBox spacing="5.0">
+            <Label style="-fx-font-weight: bold;" text="كلمة المرور" />
+            <PasswordField fx:id="passwordField" promptText="أدخل كلمة المرور" styleClass="password-field">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </PasswordField>
+        </VBox>
+    </VBox>
+
+    <!-- Status Label -->
+    <Label fx:id="statusLabel" textAlignment="CENTER" wrapText="true" />
+
+    <!-- Loading Indicator -->
+    <StackPane>
+        <ProgressIndicator fx:id="loadingIndicator" visible="false" />
+    </StackPane>
+
+    <!-- Action Buttons -->
+    <VBox alignment="CENTER" spacing="15.0">
+        <Button fx:id="loginButton" maxWidth="Infinity" styleClass="primary-button" text="تسجيل الدخول">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+
+        <Hyperlink fx:id="forgotPasswordLink" text="نسيت كلمة المرور؟" />
+
+        <!-- Divider -->
+        <Separator />
+
+        <!-- Register Link -->
+        <VBox alignment="CENTER" spacing="10.0">
+            <Label style="-fx-text-fill: #64748B;" text="ليس لديك حساب؟" />
+            <Button fx:id="registerButton" styleClass="secondary-button" text="إنشاء حساب جديد">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+        </VBox>
+    </VBox>
+
+    <!-- Footer -->
+    <VBox alignment="CENTER" spacing="5.0">
+        <Label style="-fx-text-fill: #94A3B8; -fx-font-size: 12px;" text="© 2024 TechWay. جميع الحقوق محفوظة." />
+        <Label style="-fx-text-fill: #94A3B8; -fx-font-size: 12px;" text="بالمتابعة، أنت توافق على شروط الخدمة وسياسة الخصوصية" />
+    </VBox>
+</VBox>

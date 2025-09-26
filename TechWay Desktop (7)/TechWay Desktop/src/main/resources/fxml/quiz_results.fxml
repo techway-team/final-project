@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:controller="com.techway.coursemanagementdesktop.controller.QuizResultsController"
+            xmlns:fx="http://javafx.com/fxml">
+
+    <top>
+        <VBox spacing="10" padding="20">
+            <Label fx:id="lblQuizTitle" style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+            <Label fx:id="lblAttemptInfo" />
+        </VBox>
+    </top>
+
+    <center>
+        <VBox fx:id="resultsContainer" spacing="10" padding="20">
+            <HBox spacing="10">
+                <Label text="النتيجة:" />
+                <Label fx:id="lblFinalScore" />
+                <ProgressBar fx:id="scoreProgressBar" prefWidth="200" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="الحالة:" />
+                <Label fx:id="lblPassStatus" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="الإجابات الصحيحة:" />
+                <Label fx:id="lblCorrectAnswers" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="الوقت المستغرق:" />
+                <Label fx:id="lblTimeTaken" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="تاريخ المحاولة:" />
+                <Label fx:id="lblAttemptDate" />
+            </HBox>
+
+            <VBox fx:id="certificateSection" spacing="5" visible="false">
+                <Label fx:id="lblCertificateStatus" />
+                <Button fx:id="btnViewCertificate" text="عرض الشهادة" />
+            </VBox>
+
+            <ScrollPane fx:id="questionsScrollPane" fitToWidth="true">
+                <VBox fx:id="questionsContainer" spacing="10" padding="10" />
+            </ScrollPane>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER" padding="10">
+            <Button fx:id="btnTryAgain" text="إعادة المحاولة" />
+            <Button fx:id="btnShowAllAttempts" text="عرض المحاولات السابقة" />
+            <Button fx:id="btnBackToCourse" text="العودة للكورس" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

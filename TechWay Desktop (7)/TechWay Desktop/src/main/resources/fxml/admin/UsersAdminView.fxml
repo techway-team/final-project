@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.techway.coursemanagementdesktop.controller.admin.UsersAdminController"
+      spacing="8" style="-fx-padding:12;">
+    <HBox spacing="8">
+        <TextField fx:id="searchField" promptText="بحث عن مستخدم..."/>
+        <Button text="بحث" onAction="#onSearch"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="ترقية لأدمن" onAction="#onPromote"/>
+        <Button text="إنزال لمستخدم" onAction="#onDemote"/>
+        <Button text="تعطيل" onAction="#onDisable"/>
+        <Button text="حذف" onAction="#onDelete"/>
+    </HBox>
+
+    <TableView fx:id="table" prefHeight="560">
+        <columns>
+            <TableColumn fx:id="idCol" text="ID" prefWidth="80"/>
+            <TableColumn fx:id="nameCol" text="الاسم" prefWidth="180"/>
+            <TableColumn fx:id="emailCol" text="الإيميل" prefWidth="220"/>
+            <TableColumn fx:id="roleCol" text="الدور" prefWidth="120"/>
+            <TableColumn fx:id="statusCol" text="الحالة" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>

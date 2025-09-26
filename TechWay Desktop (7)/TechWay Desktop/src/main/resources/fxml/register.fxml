@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" styleClass="form-container" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.techway.coursemanagementdesktop.controller.RegisterController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+
+    <!-- Header -->
+    <VBox alignment="CENTER" spacing="10.0">
+        <Label styleClass="form-title" text="إنشاء حساب جديد" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label style="-fx-text-fill: #64748B;" text="انضم لمجتمع TechWay وابدأ رحلتك التعليمية" textAlignment="CENTER" />
+    </VBox>
+
+    <!-- Form Fields -->
+    <VBox spacing="15.0">
+        <VBox spacing="5.0">
+            <Label style="-fx-font-weight: bold;" text="الاسم الكامل" />
+            <TextField fx:id="nameField" promptText="أدخل اسمك الكامل" styleClass="text-field">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </TextField>
+        </VBox>
+
+        <VBox spacing="5.0">
+            <Label style="-fx-font-weight: bold;" text="البريد الإلكتروني" />
+            <TextField fx:id="emailField" promptText="أدخل بريدك الإلكتروني" styleClass="text-field">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </TextField>
+        </VBox>
+
+        <VBox spacing="5.0">
+            <Label style="-fx-font-weight: bold;" text="كلمة المرور" />
+            <PasswordField fx:id="passwordField" promptText="كلمة مرور قوية (6 أحرف على الأقل)" styleClass="password-field">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </PasswordField>
+        </VBox>
+
+        <VBox spacing="5.0">
+            <Label style="-fx-font-weight: bold;" text="تأكيد كلمة المرور" />
+            <PasswordField fx:id="confirmPasswordField" promptText="أعد إدخال كلمة المرور" styleClass="password-field">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </PasswordField>
+        </VBox>
+    </VBox>
+
+    <!-- Terms and Conditions -->
+    <CheckBox fx:id="termsCheckBox" text="أوافق على شروط الخدمة وسياسة الخصوصية" wrapText="true">
+        <font>
+            <Font size="12.0" />
+        </font>
+    </CheckBox>
+
+    <!-- Status Label -->
+    <Label fx:id="statusLabel" textAlignment="CENTER" wrapText="true" />
+
+    <!-- Loading Indicator -->
+    <StackPane>
+        <ProgressIndicator fx:id="loadingIndicator" visible="false" />
+    </StackPane>
+
+    <!-- Action Buttons -->
+    <VBox alignment="CENTER" spacing="15.0">
+        <Button fx:id="registerButton" maxWidth="Infinity" styleClass="primary-button" text="إنشاء الحساب">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+
+        <!-- Divider -->
+        <Separator />
+
+        <!-- Back to Login -->
+        <VBox alignment="CENTER" spacing="10.0">
+            <Label style="-fx-text-fill: #64748B;" text="لديك حساب بالفعل؟" />
+            <Button fx:id="backToLoginButton" styleClass="secondary-button" text="العودة لتسجيل الدخول">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+        </VBox>
+    </VBox>
+
+    <!-- Footer -->
+    <VBox alignment="CENTER" spacing="5.0">
+        <Label style="-fx-text-fill: #94A3B8; -fx-font-size: 12px;" text="بإنشاء الحساب، فإنك توافق على:" />
+        <Label style="-fx-text-fill: #94A3B8; -fx-font-size: 12px;" text="• شروط الخدمة وسياسة الخصوصية" />
+        <Label style="-fx-text-fill: #94A3B8; -fx-font-size: 12px;" text="• تلقي رسائل بريد إلكتروني تعليمية ودعائية" />
+        <Label style="-fx-text-fill: #94A3B8; -fx-font-size: 12px;" text="© 2024 TechWay. جميع الحقوق محفوظة." />
+    </VBox>
+</VBox>

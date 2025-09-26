@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import java.net.URL?>
+
+<BorderPane fx:id="mainContainer"
+            styleClass="main-container"
+            xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.techway.coursemanagementdesktop.controller.MainController">
+
+    <stylesheets>
+        <URL value="@/css/main-styles.v2.css"/>
+    </stylesheets>
+
+    <!-- ===== Header Section ===== -->
+    <top>
+        <VBox fx:id="headerSection" styleClass="header-section">
+            <HBox fx:id="navigationBar" alignment="CENTER_LEFT" spacing="20.0" styleClass="nav-bar">
+                <padding>
+                    <Insets top="8.0" right="24.0" bottom="8.0" left="24.0" />
+                </padding>
+                <!-- داخل HBox الخاص بالتنقل -->
+
+
+                <!-- App Logo and Title -->
+                <HBox alignment="CENTER_LEFT" spacing="10.0" HBox.hgrow="ALWAYS">
+                    <ImageView fx:id="logoImage"
+                               fitHeight="70.0"
+                               pickOnBounds="true"
+                               preserveRatio="true">
+                        <image>
+                            <Image url="@/images/logo.png" />
+                        </image>
+                    </ImageView>
+
+                    <Label fx:id="appTitle" styleClass="header-title app-title brand" text="TechWay">
+                        <font><Font name="System Bold" size="24.0" /></font>
+                    </Label>
+
+                    <Label fx:id="userWelcome" styleClass="header-subtitle user-welcome" />
+                </HBox>
+
+                <!-- Navigation Buttons -->
+                <HBox alignment="CENTER_RIGHT" spacing="10.0" >
+                    <Button fx:id="contactButton" styleClass="nav-link"        text="اتصل بنا" />
+                    <Button fx:id="aboutButton"   styleClass="nav-link"        text="من نحن" />
+                    <Button fx:id="mapButton"     styleClass="nav-link"        text="الخريطة" />
+                    <Button fx:id="coursesButton" styleClass="nav-link"        text="الكورسات" />
+
+                    <Button fx:id="homeButton"    styleClass="nav-link active" text="الرئيسية" />
+
+
+                    <Separator orientation="VERTICAL" />
+
+                    <Button fx:id="profileButton" styleClass="nav-link"        text="الملف الشخصي" visible="false" />
+                    <Button fx:id="logoutButton"  styleClass="nav-link"        text="تسجيل الخروج" visible="false" />
+                    <Button fx:id="loginButton"   styleClass="primary-button"  text="تسجيل الدخول"  visible="true" />
+                </HBox>
+                <Button fx:id="adminButton"
+                        text="لوحة الأدمن"
+                        onAction="#onAdminClicked"
+                        visible="false" managed="false"
+                        styleClass="nav-button"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- ===== Main Content (scrollable) ===== -->
+    <center>
+        <ScrollPane fx:id="contentArea" fitToWidth="true" hbarPolicy="NEVER" styleClass="scroll-pane">
+            <VBox fx:id="mainContent" spacing="30.0">
+                <!-- يخلي الهيرو يمدّ عرضياً بدون فراغ جانبي -->
+                <padding>
+                    <Insets top="24.0" right="0.0" bottom="24.0" left="0.0" />
+                </padding>
+
+                <!-- ===== Hero Section ===== -->
+                <StackPane fx:id="heroSection" styleClass="hero-section"
+                           minHeight="360.0" prefHeight="360.0" maxHeight="-1.0">
+
+                    <!-- قصّ بحواف دائرية -->
+                    <clip>
+                        <Rectangle arcWidth="20" arcHeight="20"
+                                   width="${heroSection.width}"
+                                   height="${heroSection.height}"/>
+                    </clip>
+
+                    <children>
+                        <!-- الخلفية: الصورة -->
+                        <ImageView fx:id="heroImage"
+                                   managed="false"
+                                   preserveRatio="false"
+                                   smooth="true"
+                                   fitWidth="${heroSection.width}"
+                                   fitHeight="${heroSection.height}">
+                            <image>
+                                <Image url="@/images/hero.jpg"/>
+                            </image>
+                        </ImageView>
+
+                        <!-- طبقة بنفسجية فوق الصورة -->
+                        <Rectangle fx:id="heroOverlay" managed="false"
+                                   fill="#4F46E5" opacity="0.65"
+                                   arcWidth="20" arcHeight="20"
+                                   width="${heroSection.width}"
+                                   height="${heroSection.height}"/>
+
+                        <!-- محتوى الهيرو (مطابق للموقع) -->
+                        <VBox alignment="CENTER" spacing="16.0" style="-fx-padding: 0 24 0 24;">
+                            <!-- عنوان كبير + كلمة مميزة -->
+                            <TextFlow textAlignment="CENTER">
+                                <Text text="إتقان المهارات التقنية " styleClass="hero-title"/>
+                                <Text text="."        styleClass="hero-title hero-accent"/>
+                            </TextFlow>
+
+                            <!-- سطر فرعي -->
+                            <Label styleClass="hero-subtitle"
+                                   text="اكتشف كورسات متميزة من أفضل المدربين وطور مسيرتك المهنية"
+                                   wrapText="true" />
+
+                            <!-- الأزرار -->
+                            <HBox alignment="CENTER" spacing="12.0">
+                                <Button fx:id="heroExploreButton" styleClass="primary-button hero-cta-primary" text="ابدأ الآن" />
+                                <Button fx:id="heroAboutButton"   styleClass="ghost-button   hero-cta-secondary" text="من نحن" />
+                            </HBox>
+
+                            <!-- إحصائيات -->
+                            <HBox alignment="CENTER" spacing="40.0" styleClass="hero-stats">
+                                <VBox alignment="CENTER" spacing="4.0" styleClass="hero-stat">
+                                    <Label text="+500"      styleClass="hero-stat-number"/>
+                                    <Label text="طالب نشط"  styleClass="hero-stat-caption"/>
+                                </VBox>
+                                <VBox alignment="CENTER" spacing="4.0" styleClass="hero-stat">
+                                    <Label text="+6"         styleClass="hero-stat-number"/>
+                                    <Label text="كورس متاح"  styleClass="hero-stat-caption"/>
+                                </VBox>
+                                <VBox alignment="CENTER" spacing="4.0" styleClass="hero-stat">
+                                    <Label text="4.8"         styleClass="hero-stat-number"/>
+                                    <Label text="تقييم المنصة" styleClass="hero-stat-caption"/>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+                    </children>
+                </StackPane>
+
+                <!-- ===== لماذا تختار TechWay؟ ===== -->
+                <VBox fx:id="whySection" spacing="16.0" alignment="CENTER" style="-fx-padding: 32 24 0 24;">
+                    <Label text="لماذا تختار TechWay؟" styleClass="why-title"/>
+                    <Label text="نوفر لك أفضل تجربة تعليمية مع مزايا متقدمة وإرشاد شخصي"
+                           styleClass="why-subtitle" wrapText="true"/>
+
+                    <HBox spacing="24.0" alignment="CENTER">
+                        <VBox spacing="12.0" alignment="CENTER" styleClass="feature-card-modern" prefWidth="300">
+                            <Label text="📘"  styleClass="feature-icon-modern"/>
+                            <Label text="دعم المجتمع" styleClass="feature-title-modern"/>
+                            <Label text="انضم لمجتمع من المتعلمين والمدربين"
+                                   styleClass="feature-desc-modern" wrapText="true"/>
+                        </VBox>
+
+                        <VBox spacing="12.0" alignment="CENTER" styleClass="feature-card-modern" prefWidth="300">
+                            <Label text="🔒"  styleClass="feature-icon-modern"/>
+                            <Label text="شهادة معتمدة" styleClass="feature-title-modern"/>
+                            <Label text="احصل على شهادة عند إكمال الكورس"
+                                   styleClass="feature-desc-modern" wrapText="true"/>
+                        </VBox>
+
+                        <VBox spacing="12.0" alignment="CENTER" styleClass="feature-card-modern" prefWidth="300">
+                            <Label text="🧭"  styleClass="feature-icon-modern"/>
+                            <Label text="تعلّم مُركّز" styleClass="feature-title-modern"/>
+                            <Label text="مسارات تناسب هدفك المهني"
+                                   styleClass="feature-desc-modern" wrapText="true"/>
+                        </VBox>
+
+                        <VBox spacing="12.0" alignment="CENTER" styleClass="feature-card-modern" prefWidth="300">
+                            <Label text="👨‍🏫"  styleClass="feature-icon-modern"/>
+                            <Label text="مدربون خبراء" styleClass="feature-title-modern"/>
+                            <Label text="مدربون معتمدون بخبرة عملية"
+                                   styleClass="feature-desc-modern" wrapText="true"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <!-- ===== Footer ===== -->
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #F1F5F9; -fx-padding: 8 16 8 16;">
+            <Label style="-fx-text-fill: #475569; -fx-font-size: 12px;" text="TechWay © 2025" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

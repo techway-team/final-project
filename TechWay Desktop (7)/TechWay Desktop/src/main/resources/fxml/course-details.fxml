@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.techway.coursemanagementdesktop.controller.CourseDetailsController">
+    <VBox fx:id="courseInfoContainer" spacing="20.0">
+        <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+        </padding>
+
+        <!-- Course Image -->
+        <VBox alignment="CENTER">
+            <ImageView fx:id="courseImage" fitHeight="250.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="false" styleClass="course-image" />
+        </VBox>
+
+        <!-- Course Title and Basic Info -->
+        <VBox spacing="15.0">
+            <Label fx:id="courseTitle" styleClass="course-title" wrapText="true">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+
+            <HBox spacing="20.0" alignment="CENTER_LEFT">
+                <Label fx:id="courseInstructor" styleClass="course-instructor">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+
+                <Separator orientation="VERTICAL" />
+
+                <Label fx:id="courseLocation" styleClass="course-instructor">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+
+                <Separator orientation="VERTICAL" />
+
+                <Label fx:id="courseDuration" styleClass="course-instructor">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </HBox>
+
+            <Label fx:id="coursePrice" styleClass="course-price">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+        </VBox>
+
+        <!-- Action Buttons -->
+        <HBox alignment="CENTER_LEFT" spacing="15.0">
+            <Button fx:id="enrollButton" styleClass="primary-button" text="سجل في الكورس">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <Button fx:id="addToFavoritesButton" styleClass="secondary-button" text="إضافة للمفضلة">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <!-- الزر الجديد -->
+            <!-- زر بدء الكويز -->
+            <Button fx:id="startQuizButton" text="ابدأ الكويز" styleClass="quiz-button" visible="false">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+        </HBox>
+
+
+        <!-- Course Description -->
+        <VBox spacing="10.0">
+            <Label styleClass="course-title" text="وصف الكورس:">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+            </Label>
+
+            <TextArea fx:id="courseDescription" editable="false" prefRowCount="6" styleClass="course-description" wrapText="true">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </TextArea>
+        </VBox>
+
+
+        <!-- Course Lessons Section -->
+        <VBox fx:id="lessonsContainer" spacing="10.0">
+            <Label text="الدروس:" styleClass="course-title">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+            </Label>
+        </VBox>
+
+
+
+
+        <!-- Additional Info will be added programmatically -->
+
+    </VBox>
+</ScrollPane>

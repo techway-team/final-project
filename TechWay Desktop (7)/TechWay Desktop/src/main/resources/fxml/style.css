@@ -1,0 +1,250 @@
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -fx-font-size: 14px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #6a4ab9; /* بنفسجي */
+}
+
+/* تحسين عناوين الأعمدة */
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #9c85c8 transparent;
+    -fx-border-width: 0 0 2 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-padding: 8 10 8 10;
+    -fx-font-size: 14px;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+}
+
+.table-view .table-row-cell:filled:selected,
+.table-view .table-row-cell:filled:hover {
+    -fx-background-color: #dcd6f7;
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-view .table-cell {
+    -fx-padding: 8 10 8 10;
+    -fx-border-color: transparent transparent #eee transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+.table-view .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:hover {
+    -fx-cursor: hand;
+}
+
+
+/* ===== BarChart عام ===== */
+.chart {
+    -fx-background-color: white;
+    -fx-padding: 15;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(107, 84, 184, 0.15), 8, 0, 0, 2);
+}
+
+/* ===== عنوان الرسم ===== */
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6a4ab9;
+    -fx-padding: 10 0 15 0;
+}
+
+/* ===== محاور X و Y ===== */
+.axis {
+    -fx-tick-label-fill: #666;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.axis-label {
+    -fx-text-fill: #6a4ab9;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+/* ===== الأشرطة ===== */
+.default-color0.chart-bar {
+    -fx-bar-fill: #6a4ab9;
+}
+
+.default-color1.chart-bar {
+    -fx-bar-fill: #8e81c3;
+}
+
+.default-color2.chart-bar {
+    -fx-bar-fill: #b8aef2;
+}
+
+/* ===== تأثير عند تمرير الماوس على الشريط ===== */
+.chart-bar:hover {
+    -fx-opacity: 0.8;
+    -fx-cursor: hand;
+}
+
+/* ===== خط الشبكة ===== */
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines {
+    -fx-stroke: #eee;
+}
+
+/* ===== إزالة الإطار ===== */
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+/* ==== TabPane Header Styling ==== */
+
+.tab-pane {
+    -fx-tab-min-width: 120px;
+    -fx-tab-max-height: 40px;
+    -fx-tab-min-height: 40px;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: white; /* خلفية بيضاء */
+    -fx-padding: 0 0 5 0;
+    -fx-border-color: transparent transparent #b29ae0 transparent;
+    -fx-border-width: 0 0 2px 0;
+}
+
+/* شكل كل تبويب */
+.tab-pane .tab {
+    -fx-background-insets: 0;
+    -fx-background-color: transparent;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.tab-pane .tab-label {
+    -fx-text-fill: black; /* نص أسود */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* التبويب النشط */
+.tab-pane .tab:selected {
+    -fx-background-color: #dcd6f7; /* لون خلفية التبويب النشط */
+    -fx-background-radius: 8 8 0 0;
+}
+
+/* نص التبويب النشط */
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: black;
+}
+
+/* تأثير Hover */
+.tab-pane .tab:hover {
+    -fx-background-color: #c1b9e1;
+    -fx-background-radius: 8 8 0 0;
+}
+
+/* إزالة خط التحديد حول التبويبات */
+.tab-pane:focused .tab:selected {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* زر التحديث */
+.button {
+    -fx-background-color: linear-gradient(to right, #16a34a, #15803d); /* أخضر فاتح لغامق */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 6 14;
+}
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #22c55e, #166534);
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #16a34a;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 4 10;
+}
+.combo-box .list-cell {
+    -fx-text-fill: #166534;
+}
+
+/* LineChart */
+.chart-series-line {
+    -fx-stroke: #16a34a;      /* الأخضر */
+    -fx-stroke-width: 2px;
+}
+.chart-line-symbol {
+    -fx-background-color: #16a34a, white;
+    -fx-background-radius: 50%;
+    -fx-padding: 4px;
+}
+
+/* محاور الرسم */
+.chart-plot-background {
+    -fx-background-color: #fafafa;
+}
+.axis-label {
+    -fx-text-fill: #166534;
+    -fx-font-weight: bold;
+}
+
+.title-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+}
+
+.primary-btn {
+    -fx-background-color: #6c63ff;
+    -fx-text-fill: white;
+    -fx-padding: 5 15 5 15;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.primary-btn:hover {
+    -fx-background-color: #5148d8;
+}
+
+.activity-item {
+    -fx-background-color: #f9f9f9;
+    -fx-padding: 10;
+    -fx-background-radius: 8;
+    -fx-wrap-text: true;
+}
+
+.list-view{
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:focused:selected {
+    -fx-background-color: #a78bfa !important; /* بنفسجي واضح */
+}
+.table-cell:selected {
+    -fx-text-fill: black !important;
+}

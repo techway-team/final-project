@@ -1,0 +1,122 @@
+    /* جذر الصفحة */
+    .about-root {
+        -fx-font-family: "Noto Sans Arabic", "Arial";
+    }
+
+    /* حاوية المحتوى */
+    .about-container {
+        -fx-spacing: 28;
+    }
+
+    /* العنوان الرئيسي */
+    .about-hero-title {
+        -fx-font-size: 36px;
+        -fx-font-weight: bold;
+        -fx-text-fill: #1F2937; /* slate-800 */
+    }
+
+    /* الوصف تحت العنوان */
+    .about-hero-subtitle {
+        -fx-font-size: 16px;
+        -fx-text-fill: #4B5563; /* slate-600 */
+    }
+
+    /* عناوين الأقسام */
+    .section-title {
+        -fx-font-size: 28px;
+        -fx-font-weight: 700;
+        -fx-text-fill: #1F2937;
+    }
+
+    /* بطاقة عامة */
+    .about-card {
+        -fx-background-color: white;
+        -fx-background-radius: 14;
+        -fx-padding: 18;
+        -fx-effect: dropshadow(gaussian, rgba(17, 24, 39, 0.06), 10, 0.15, 0, 2);
+        -fx-border-color: #E5E7EB; /* gray-200 */
+        -fx-border-radius: 14;
+    }
+
+    /* بادج الأيقونة */
+    .badge-icon {
+        -fx-background-color: rgba(139,95,232,0.12);
+        -fx-text-fill: #7C3AED; /* violet-600 */
+        -fx-font-size: 20px;
+        -fx-font-weight: bold;
+        -fx-padding: 8 12;
+        -fx-background-radius: 12;
+        -fx-alignment: center;
+    }
+
+    /* عناوين البطاقات */
+    .card-title {
+        -fx-font-size: 18px;
+        -fx-font-weight: 700;
+        -fx-text-fill: #111827; /* gray-900 */
+    }
+
+    /* عنوان فرعي (فريقنا) */
+    .card-subtitle {
+        -fx-font-size: 14px;
+        -fx-text-fill: #6B7280; /* gray-500 */
+    }
+
+    /* نص البطاقات */
+    .card-text {
+        -fx-font-size: 15px;
+        -fx-text-fill: #374151; /* gray-700 */
+    }
+
+    /* شريط الإحصائيات */
+    .stats-band {
+        -fx-background-color: linear-gradient(135deg, #8B5FE8, #9C7EF0);
+        -fx-background-radius: 18;
+    }
+
+    /* أرقام KPI */
+    .kpi-number {
+        -fx-text-fill: white;
+        -fx-font-size: 28px;
+        -fx-font-weight: 800;
+    }
+    .kpi-label {
+        -fx-text-fill: rgba(255,255,255,0.9);
+        -fx-font-size: 14px;
+    }
+
+    /* بانر الدعوة للإجراء */
+    .cta-banner {
+        -fx-background-color: linear-gradient(135deg, #7C3AED, #8B5FE8);
+        -fx-background-radius: 16;
+    }
+    .cta-title {
+        -fx-text-fill: white;
+        -fx-font-size: 22px;
+        -fx-font-weight: 800;
+    }
+    .cta-subtitle {
+        -fx-text-fill: rgba(255,255,255,0.92);
+        -fx-font-size: 15px;
+    }
+
+    /* أزرار احتياط (لو ما كانت معرفة مسبقًا) */
+    .primary-button {
+        -fx-background-color: #7C3AED;
+        -fx-text-fill: white;
+        -fx-font-weight: bold;
+        -fx-background-radius: 10;
+        -fx-padding: 10 16;
+    }
+    .primary-button:hover { -fx-background-color: #6D28D9; }
+
+    .secondary-button {
+        -fx-background-color: white;
+        -fx-text-fill: #7C3AED;
+        -fx-font-weight: bold;
+        -fx-background-radius: 10;
+        -fx-padding: 10 16;
+        -fx-border-color: rgba(124,58,237,0.35);
+        -fx-border-radius: 10;
+    }
+    .secondary-button:hover { -fx-background-color: rgba(124,58,237,0.06); }
