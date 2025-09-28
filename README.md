@@ -97,6 +97,8 @@ Login → View Courses → Course Details → Enroll → Quiz → Favorites → 
 **Flow:** Open dashboard → View stats (Users, Courses, Reviews, Favorites, Statistics)  
 **Alternative:** Non-admin users → Dashboard not accessible  
 
+<img width="1001" height="1280" alt="image" src="https://github.com/user-attachments/assets/6f1c51b2-fcd1-49f2-b10f-3009deff6901" />
+
 ---
 
 ## **Implementation**
