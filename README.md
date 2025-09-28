@@ -98,6 +98,7 @@ Login → View Courses → Course Details → Enroll → Quiz → Favorites → 
 **Alternative:** Non-admin users → Dashboard not accessible  
 
 <img width="1001" height="1280" alt="image" src="https://github.com/user-attachments/assets/6f1c51b2-fcd1-49f2-b10f-3009deff6901" />
+<img width="1151" height="1251" alt="image" src="https://github.com/user-attachments/assets/3f5a5215-5d63-4447-bc58-854352682943" />
 
 ---
 
