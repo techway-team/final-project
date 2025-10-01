@@ -106,16 +106,20 @@ Login → View Courses → Course Details → Enroll → Quiz → Favorites → 
 **Backend Endpoints (Spring Boot):**  
 - /api/auth/login  
 - /api/courses  
-- /api/favorites  
-- /api/quizzes  
+- /api/favorites
+- /api/enrollments
+- /api/quizzes
+- /api/certificates
 - /api/reviews  
 
 **Frontend (JavaFX):**  
 - Login  
 - Courses  
-- Course Details  
-- Favorites  
-- Quiz  
+- Course Details 
+- Favorites
+- Enrollment 
+- Quiz
+- Certificates
 - Dashboard  
 
 **Frontend (Vue.js):**  
